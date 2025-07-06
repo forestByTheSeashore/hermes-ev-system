@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录测试</title>
+</head>
+<body>
+
+    <h1>员工登录</h1>
+    <form id="employeeForm">
+        <label for="employee_id">员工ID:</label>
+        <input type="text" id="employee_id" name="employee_id" required><br>
+        <label for="employee_password">密码:</label>
+        <input type="password" id="employee_password" name="password" required><br>
+        <button type="submit">登录</button>
+    </form>
+    <div id="employeeResponse"></div>
+
+    <h1>顾客登录</h1>
+    <form id="customerForm">
+        <label for="customer_id">顾客ID:</label>
+        <input type="text" id="customer_id" name="customer_id" required><br>
+        <label for="customer_password">密码:</label>
+        <input type="password" id="customer_password" name="password" required><br>
+        <button type="submit">登录</button>
+    </form>
+    <div id="customerResponse"></div>
+
+    <script>
+        // 员工登录表单提交处理
+        document.getElementById('employeeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const employee_id = document.getElementById('employee_id').value;
+            const password = document.getElementById('employee_password').value;
+            
+            // 发送员工登录请求
+            fetch('http://phphermesbackendv2-env.us-east-1.elasticbeanstalk.com/login.php/employee', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `employee_id=${encodeURIComponent(employee_id)}&password=${encodeURIComponent(password)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('employeeResponse').textContent = `响应: ${JSON.stringify(data)}`;
+            })
+            .catch(error => {
+                document.getElementById('employeeResponse').textContent = `错误: ${error}`;
+            });
+        });
+
+        // 顾客登录表单提交处理
+        document.getElementById('customerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const customer_id = document.getElementById('customer_id').value;
+            const password = document.getElementById('customer_password').value;
+
+            // 发送顾客登录请求
+            fetch('http://phphermesbackendv2-env.us-east-1.elasticbeanstalk.com/login.php/customer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `customer_id=${encodeURIComponent(customer_id)}&password=${encodeURIComponent(password)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('customerResponse').textContent = `响应: ${JSON.stringify(data)}`;
+            })
+            .catch(error => {
+                document.getElementById('customerResponse').textContent = `错误: ${error}`;
+            });
+        });
+    </script>
+
+</body>
+</html>

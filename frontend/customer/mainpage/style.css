@@ -1,0 +1,268 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header Section */
+.header {
+  background-color: #111;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  gap: 30px;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-item a:hover {
+  color: #0071e3;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  animation: slideBackground 30s infinite;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background-color: #0071e3;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #005bb5;
+}
+
+/* Keyframes for background image slide effect */
+@keyframes slideBackground {
+  0% {
+    background-image: url("scr/Tesla.jpg"); /* First image */
+  }
+  33% {
+    background-image: url("scr/Tesla2.jpg"); /* Second image */
+  }
+  66% {
+    background-image: url("scr/Tesla3.jpg"); /* Third image */
+  }
+  100% {
+    background-image: url("scr/Tesla.jpg"); /* Loop back to the first image */
+  }
+}
+
+/* Product Showcase Section */
+.product-showcase {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 20px;
+  gap: 20px;
+}
+
+.product-card {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 30%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px; /* Set fixed height for consistency */
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for images */
+  object-fit: cover; /* Ensures images are properly scaled and cropped */
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+.product-card p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.product-card .cta-button {
+  margin-top: auto; /* Push the button to the bottom of the card */
+  background-color: #111;
+  color: white;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.product-card .cta-button:hover {
+  background-color: rgba(17, 17, 17, 0.8); /* Button lightens on hover */
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Footer Section */
+.footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+.footer-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links li a {
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #0071e3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-showcase {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .product-card {
+      width: 80%;
+      margin-bottom: 20px;
+  }
+
+  .hero-content h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-content p {
+      font-size: 1.2rem;
+  }
+}
+
+
+/* Sub-navigation dropdown */
+.navbar-item {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #111;  /* Dark background */
+  padding: 10px;
+  z-index: 10;
+  width: 200px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  list-style-type: none; /* Remove default list styling */
+}
+
+.navbar-item:hover .dropdown {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #fff; /* Light text color */
+  font-size: 12px; /* Smaller font size */
+}
+
+.dropdown a:hover {
+  background-color: #333; /* Darker hover effect */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Behind the dropdown but above other content */
+  display: none;
+  backdrop-filter: blur(5px); /* Apply blur effect */
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out; /* Gradual fade in/out */
+}
+
+/* When the dropdown is visible, the overlay will be shown */
+.navbar-item:hover + .overlay {
+  display: block;
+  opacity: 1; /* Fade in overlay */
+}

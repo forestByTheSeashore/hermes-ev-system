@@ -1,23 +1,431 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ===========================
+# Hermes EV Manufacturing System
+# .gitignore
+# ===========================
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# ===========================
+# Node.js & npm
+# ===========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
-# testing
-/coverage
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
 
-# production
-/build
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
 
-# misc
-.DS_Store
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# TypeScript v1 declaration files
+typings/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# ===========================
+# React & Create React App
+# ===========================
+# Build outputs
+build/
+dist/
+
+# React scripts
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# React Router
+router.log
+
+# Bundle analyzer
+bundle-analyzer-report.html
+
+# ===========================
+# PHP
+# ===========================
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# Laravel
+/bootstrap/compiled.php
+/app/storage/
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# CodeIgniter
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+
+# Zend Framework
+/data/cache/
+/data/logs/
+/data/sessions/
+/data/tmp/
+
+# PHP Storm
+.idea/
+
+# ===========================
+# Database
+# ===========================
+# MySQL
+*.sqlite
+*.db
+*.mdb
+*.accdb
+
+# Database dumps
+*.dump
+*.backup
+
+# Database configuration files (keep template, ignore actual config)
+**/config/database.php
+**/config/db.php
+!**/config/database.example.php
+!**/config/db.example.php
+
+# Keep database schema and views
+!database/*.sql
+!database/**/*.sql
+
+# ===========================
+# Logs
+# ===========================
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ===========================
+# OS Generated Files
+# ===========================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===========================
+# IDE & Editor Files
+# ===========================
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+*~
+tags
+[._]*.un~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===========================
+# Temporary Files
+# ===========================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+*~
+
+# ===========================
+# Security & Sensitive Files
+# ===========================
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Configuration files with sensitive data
+config/database.php
+config/secrets.php
+config/keys.php
+*.key
+*.pem
+*.p12
+*.pfx
+
+# AWS credentials
+.aws/
+
+# ===========================
+# Build & Distribution
+# ===========================
+# Build directories
+build/
+dist/
+out/
+
+# Production builds
+*.min.js
+*.min.css
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ===========================
+# Testing
+# ===========================
+# Test coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Test results
+test-results/
+junit.xml
+
+# ===========================
+# Documentation
+# ===========================
+# Generated documentation
+docs/generated/
+docs/build/
+
+# ===========================
+# Cache Files
+# ===========================
+# Various caches
+.cache/
+*.cache
+cache/
+
+# Thumbnails
+thumbs/
+thumbnails/
+
+# ===========================
+# Project Specific
+# ===========================
+# Frontend build files
+frontend/build/
+frontend/dist/
+
+# Backend cache
+backend/cache/
+backend/logs/
+
+# Upload directories
+uploads/
+files/
+media/
+
+# Session files
+sessions/
+
+# ===========================
+# Package Managers
+# ===========================
+# npm (keep package-lock.json for reproducible builds)
+# package-lock.json
+yarn.lock
+
+# Composer
+composer.lock
+
+# ===========================
+# Miscellaneous
+# ===========================
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Lock files
+*.lock
+
+# PID files
+*.pid 

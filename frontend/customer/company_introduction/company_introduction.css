@@ -1,0 +1,188 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Header Section */
+.header {
+    background-color: #111;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar-list {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    margin: 0; /* Ensure no extra margin around navbar list */
+    padding: 0; /* Ensure no padding */
+  }
+  
+  .navbar-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-item a:hover {
+    color: #0071e3;
+  }
+  
+  /* Sub-navigation dropdown */
+.navbar-item {
+    position: relative;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #111;  /* Dark background */
+    padding: 10px;
+    z-index: 10;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    list-style-type: none; /* Remove default list styling */
+  }
+  
+  .navbar-item:hover .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #fff; /* Light text color */
+    font-size: 12px; /* Smaller font size */
+  }
+  
+  .dropdown a:hover {
+    background-color: #333; /* Darker hover effect */
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Behind the dropdown but above other content */
+    display: none;
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out; /* Gradual fade in/out */
+  }
+  
+  /* When the dropdown is visible, the overlay will be shown */
+  .navbar-item:hover + .overlay {
+    display: block;
+    opacity: 1; /* Fade in overlay */
+  }
+  
+  /* Company Introduction Section */
+  .company-introduction {
+    padding: 100px 20px 50px 20px; /* Add padding to push content below the fixed navbar */
+    background-color: #ffffff;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto 50px auto;
+    padding: 20px;
+    padding-top: calc(80px + 20px); /* 80px for navbar height + 20px padding */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #111;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #0071e3;
+    border-bottom: 2px solid #0071e3;
+    padding-bottom: 5px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  ul li strong {
+    font-weight: bold;
+  }
+  
+  /* Footer Section */
+  .footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer-links li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-links li a:hover {
+    color: #0071e3;
+  }
+  

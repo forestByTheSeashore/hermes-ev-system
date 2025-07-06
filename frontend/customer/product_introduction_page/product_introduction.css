@@ -1,0 +1,354 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+/* Gradient Background Covering the Entire Page with Static Color Gradient */
+.gradient-bg {
+  position: fixed; /* 使用 fixed 来确保背景始终固定在页面 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 宽度覆盖整个页面 */
+  height: 100vh; /* 高度覆盖整个视口 */
+  background: linear-gradient(90deg,  /* 使用 90deg 实现从左右两侧的渐变 */
+    #1e3a5f 0%,    /* 深蓝色带一点灰色，左侧 */
+    #2c4b6d 15%,   /* 深蓝色带灰色，渐变过渡区开始 */
+    #74137e 45%,   /* 紫色渐变区域，渐变的中间 */
+    #74137e 55%,   /* 紫色渐变区域，渐变的中间 */
+    #2c4b6d 85%,   /* 深蓝色带灰色，渐变过渡区 */
+    #1e3a5f 100%   /* 深蓝色带一点灰色，右侧 */
+  );
+  background-size: 100% 100%; /* 保持背景为静态渐变 */
+  z-index: -1; /* 保证它在页面内容的下方 */
+}
+
+
+  /* Header Section */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Higher value than the gradient-bg */
+    background-color: #111; /* Keep original header color */
+    padding: 20px 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar-list {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+  }
+  
+  .navbar-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-item a:hover {
+    color: #0071e3;
+  }
+  
+  /* Dropdown menu styling */
+  .navbar-item {
+    position: relative;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #111;
+    padding: 10px;
+    z-index: 10;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    list-style-type: none;
+  }
+  
+  .navbar-item:hover .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  .dropdown a:hover {
+    background-color: #333;
+  }
+  
+  /* Overlay for dropdown */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  /* When the dropdown is visible, show overlay */
+  .navbar-item:hover + .overlay {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Main Content Styling */
+  main {
+    padding: 20px;
+    margin-top: 100px; /* Prevent content overlap with fixed header */
+  }
+  
+  /* Model Card Styling */
+  .model {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .model h2 {
+    font-size: 3em; /* Change to the desired size */
+  }
+  
+  .model img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .model img.hidden {
+    opacity: 0;
+  }
+  
+  .model p {
+    margin: 15px 0;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .model button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+  }
+  
+  .model button:hover {
+    background-color: #0056b3;
+  }
+  
+/* Image Slider Container with Enhanced Shadow */
+.image-container {
+  position: relative;
+  width: 75vw; /* 宽度占屏幕的 75% */
+  height: 500px; /* 设置一个固定的高度，也可以根据需要调整 */
+  max-width: 100%; /* 最大宽度不超过100% */
+  overflow: hidden; /* 确保图片不会超出容器 */
+  margin: 0 auto; /* 居中显示 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* 增强阴影效果，扩大范围 */
+  border-radius: 5px; /* 添加圆角效果 */
+}
+/* Image Slider */
+.image-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%; /* 图片容器宽度为100% */
+}
+
+/* Image Styling */
+.image-slider img {
+  width: 100%; /* 图片宽度填充容器 */
+  height: 100%; /* 图片高度填充容器 */
+  object-fit: cover; /* 使图片覆盖整个容器，并保持完整，不裁剪 */
+  border-radius: 5px; /* 添加圆角效果 */
+}
+
+/* Slider Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.image-container:hover .slider-btn {
+  display: block;
+}
+
+  
+  /* Button Styles */
+  .order-btn,
+  .more-detail-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+  }
+  
+  .order-btn:hover,
+  .more-detail-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-list {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .model {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Footer Section */
+  .footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .footer-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer-links li a {
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li a:hover {
+    color: #0071e3;
+  }
+
+  /* Car Specs Table Styling */
+.car-specs {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .car-specs table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .car-specs td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1.1em;
+    color: #333;
+  }
+  
+  .car-specs td:first-child {
+    font-weight: bold;
+    width: 40%;
+    color: #007bff;
+  }
+  
+  .car-specs td:last-child {
+    color: #555;
+  }
+  
+  .car-specs tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .car-specs tr:hover {
+    background-color: #e8f4ff;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Add a border to the table */
+  .car-specs table, .car-specs td {
+    border: 1px solid #ddd;
+  }
+  
+  .car-specs table {
+    border-radius: 8px;
+    overflow: hidden;
+  }

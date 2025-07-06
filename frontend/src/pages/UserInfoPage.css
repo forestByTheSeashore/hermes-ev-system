@@ -1,0 +1,129 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  .header {
+    background-color: #111;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar-list {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+  }
+  
+  .navbar-item button {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .navbar-item button:hover {
+    color: #0071e3;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 80px auto 50px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #111;
+  }
+  
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .order-table th,
+  .order-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .order-table th {
+    background-color: #0071e3;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .order-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .order-table tr:hover {
+    background-color: #ddd;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .content {
+    flex: 2; /* 左侧内容宽度 */
+  }
+  
+  .customer-info {
+    flex: 1; /* 右侧表格宽度 */
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .customer-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .customer-table th,
+  .customer-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .customer-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  

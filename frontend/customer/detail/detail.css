@@ -1,0 +1,225 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Section (Navigation) */
+.header {
+    background-color: #111;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar-list {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+  }
+  
+  .navbar-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-item a:hover {
+    color: #0071e3;
+  }
+
+  /* Sub-navigation dropdown */
+.navbar-item {
+    position: relative;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #111;  /* Dark background */
+    padding: 10px;
+    z-index: 10;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    list-style-type: none; /* Remove default list styling */
+  }
+  
+  .navbar-item:hover .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #fff; /* Light text color */
+    font-size: 12px; /* Smaller font size */
+  }
+  
+  .dropdown a:hover {
+    background-color: #333; /* Darker hover effect */
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Behind the dropdown but above other content */
+    display: none;
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out; /* Gradual fade in/out */
+  }
+  
+  /* When the dropdown is visible, the overlay will be shown */
+  .navbar-item:hover + .overlay {
+    display: block;
+    opacity: 1; /* Fade in overlay */
+  }
+
+/* Product Detail Section */
+.product-detail {
+    margin-top: 120px;
+    padding: 40px;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 120px auto 40px auto; /* Center align */
+}
+
+.product-header h1 {
+    font-size: 3rem; /* Larger title for better impact */
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.product-header p {
+    font-size: 1.25rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.specs-table h2, .product-description h2, .pricing h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #111;
+    border-bottom: 2px solid #0071e3; /* Add border to section titles */
+    padding-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+    color: #111;
+}
+
+table td {
+    background-color: #fafafa;
+}
+
+.product-description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.product-description ul li {
+    margin: 12px 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.pricing p {
+    font-size: 1.2rem;
+    color: #111;
+    margin-top: 10px;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.footer-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links li a {
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #0071e3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-detail {
+        padding: 20px;
+    }
+
+    .product-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .product-header p {
+        font-size: 1rem;
+    }
+
+    table th, table td {
+        font-size: 14px;
+    }
+
+    .product-description ul li {
+        font-size: 1rem;
+    }
+}

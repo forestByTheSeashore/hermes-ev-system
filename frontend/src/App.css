@@ -1,0 +1,43 @@
+/* src/App.css */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column; /* 垂直堆叠 */
+  align-items: stretch; /* 子元素宽度拉伸到与父容器一致 */
+  height: 100vh; /* 全屏高度 */
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}

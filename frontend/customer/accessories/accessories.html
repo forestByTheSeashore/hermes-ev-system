@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选购你的车辆配置</title>
+    <link rel="stylesheet" href="accessories.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="..\mainpage\index.html">Home</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#">Model1</a>
+              <ul class="dropdown">
+                <li><a href="..\detail\detail.html">Product Data</a></li>
+                <li><a href="..\accessories\accessories.html">Purchase</a></li>
+              </ul>
+            </li>
+            <li class="navbar-item">
+              <a href="#">Model2</a>
+              <ul class="dropdown">
+                <li><a href="..\detail\detail.html">Product Data</a></li>
+                <li><a href="..\accessories\accessories.html">Purchase</a></li>
+              </ul>
+            </li>
+            <li class="navbar-item">
+              <a href="#">Model3</a>
+              <ul class="dropdown">
+                <li><a href="..\detail\detail.html">Product Data</a></li>
+                <li><a href="..\accessories\accessories.html">Purchase</a></li>
+              </ul>
+            </li>
+            <li class="navbar-item">
+              <a href="#">Products</a>
+              <ul class="dropdown">
+                <li><a href="..\product_introduction_page\product_introduction.html">Model1</a></li>
+                <li><a href="..\product_introduction_page\product_introduction.html">Model2</a></li>
+                <li><a href="..\product_introduction_page\product_introduction.html">Model3</a></li>
+              </ul>
+            </li>
+            <li class="navbar-item">
+              <a href="#">Company</a>
+              <ul class="dropdown">
+                <li><a href="..\terms_of_service\terms_of_service.html">Terms of Service</a></li>
+                <li><a href="..\private_policy\private_policy.html">Privacy Policy</a></li>
+                <li><a href="javascript:void(0);" id="contactUs">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="navbar-item">
+              <a href="..\company_introduction\company_introduction.html">Introduction</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    <div class="container">
+        <!-- 左侧预览区域 -->
+        <div class="preview-area">
+            <img id="preview-image" src="src\default.png" alt="预览图">
+        </div>
+
+        <!-- 右侧选购选项区域 -->
+        <div class="options-area">
+            <h1>选购你的车辆配置</h1>
+
+            <!-- 车型 -->
+            <section class="selection-section">
+                <h2>车型</h2>
+                <div class="options" id="model-options">
+                    <div class="option" data-value="Model 1" data-preview="src\Model1.jpg">
+                        <span class="title">Model 1</span>
+                        <p class="description">Innovation at Its Core.</p>
+                    </div>
+                    <div class="option" data-value="Model 2" data-preview="src\Model2.jpg">
+                        <span class="title">Model 2</span>
+                        <p class="description">Meet Elegance.</p>
+                    </div>
+                    <div class="option" data-value="Model 3" data-preview="src\Model3.jpg">
+                        <span class="title">Model 3</span>
+                        <p class="description">Powerful, yet Refined.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 颜色 -->
+            <section class="selection-section">
+                <h2>颜色</h2>
+                <div class="options" id="color-options">
+                    <div class="option color-option black" data-value="black" data-preview="src\black-car.png"></div>
+                    <div class="option color-option white" data-value="white" data-preview="src\white-car.png"></div>
+                    <div class="option color-option red" data-value="red" data-preview="src\red-car.png"></div>
+                    <div class="option color-option blue" data-value="blue" data-preview="src\blue-car.png"></div>
+                    <div class="option color-option silver" data-value="silvery" data-preview="src\silvery-car.png"></div>
+                </div>
+            </section>
+
+            <!-- 轮胎 -->
+            <section class="selection-section">
+                <h2>轮胎</h2>
+                <div class="options" id="tire-options">
+                    <div class="option" data-value="Passenger Tires" data-preview="src\passenger-tire.png">
+                        <span class="title">Passenger Tires</span>
+                        <p class="description">Smooth Sailing, Every Day.</p>
+                    </div>
+                    <div class="option" data-value="Off-Road Tires" data-preview="src\off-road-tire.png">
+                        <span class="title">Off-Road Tires</span>
+                        <p class="description">"Anywhere, Anytime, Adventure Awaits.</p>
+                    </div>
+                    <div class="option" data-value="Sport Tires" data-preview="src\sports-tire.png">
+                        <span class="title">Sport Tires</span>
+                        <p class="description">Meets Precision, Every Turn.</p>
+                    </div>
+                    <div class="option" data-value="Winter Tires" data-preview="src\winter-tire.png">
+                        <span class="title">Winter Tires</span>
+                        <p class="description">Grip the Frost, Drive with Force.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 座椅 -->
+            <section class="selection-section">
+                <h2>座椅</h2>
+                <div class="options" id="seat-options">
+                    <div class="option" data-value="Leather Seats" data-preview="src\leather-seats.png">
+                        <span class="title">Leather Seats</span>
+                        <p class="description">Luxury at every turn.</p>
+                    </div>
+                    <div class="option" data-value="Sports Seats" data-preview="src\sports-seats.png">
+                        <span class="title">Sports Seats</span>
+                        <p class="description">Grip the road, feel the thrill.</p>
+                    </div>
+                    <div class="option" data-value="Luxury Seats" data-preview="src\luxury-seats.png">
+                        <span class="title">Luxury Seats</span>
+                        <p class="description">Where comfort meets elegance.</p>
+                    </div>
+                    <div class="option" data-value="Fabric Seats" data-preview="src\fabric-seats.png">
+                        <span class="title">Fabric Seats</span>
+                        <p class="description">Cool comfort, all the way.</p>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- 导航 -->
+            <section class="selection-section">
+                <h2>导航</h2>
+                <div class="options" id="navigation-options">
+                    <div class="option" data-value="GPS" data-preview="src\default.png">
+                        <span class="title">GPS</span>
+                        <p class="description">Precision and speed, for every need.</p>
+                    </div>
+                    <div class="option" data-value="GLONASS" data-preview="src\default.png">
+                        <span class="title">GLONASS</span>
+                        <p class="description">Reliable and fast, navigation that lasts.</p>
+                    </div>
+                    <div class="option" data-value="Galile" data-preview="src\default.png">
+                        <span class="title">Galile</span>
+                        <p class="description">Accurate and clear, guiding you near.</p>
+                    </div>
+                    <div class="option" data-value="BeiDou" data-preview="src\default.png">
+                        <span class="title">BeiDou</span>
+                        <p class="description">Quick and precise, journey with nice.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 内饰风格 -->
+            <section class="selection-section">
+                <h2>内饰风格</h2>
+                <div class="options" id="interior-options">
+                    <div class="option" data-value="Minimalist Style" data-preview="src\simple-style.png">
+                        <span class="title">Minimalist Style</span>
+                        <p class="description">"Less is More, Elegantly Simple.</p>
+                    </div>
+                    <div class="option" data-value="Luxury Style" data-preview="src\luxury-style.png">
+                        <span class="title">Luxury Style</span>
+                        <p class="description">Opulence Meets Elegance.</p>
+                    </div>
+                    <div class="option" data-value="Sporty Style" data-preview="src\sports-style.png">
+                        <span class="title">Sporty Style</span>
+                        <p class="description">Dynamic Elegance, Pure Performance.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 已选配置总结 -->
+            <div class="summary">
+                <h2>已选配置</h2>
+                <p id="summary-text">请选择车型、颜色和配件</p>
+                <button id="purchase-button" class="purchase-button" disabled>立即购买</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="accessories.js"></script>
+</body>
+</html>
