@@ -190,20 +190,6 @@ npm test
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
 
-## 📞 联系我们
-
-- 项目维护者: Hermes Development Team
-- 邮箱: contact@hermes-ev.com
-- 项目链接: [GitHub Repository](https://github.com/your-username/hermes-ev-manufacturing-system)
-
-## 🎯 未来计划
-
-- [ ] 移动端适配
-- [ ] 微服务架构重构
-- [ ] 实时通知系统
-- [ ] 高级数据分析
-- [ ] 国际化支持
-- [ ] 单元测试完善
 
 ---
 
